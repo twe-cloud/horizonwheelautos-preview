@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="description" content="Preview sales page for Horizon Wheels Autos — direct rental cars for Frisco drivers, Turo switchers, and delivery/rideshare operators." />
+  <title>Horizon Wheels Autos — Frisco rental preview</title>
+  <style>
+    :root {
+      --bg: #08111d;
+      --bg-soft: #0d1827;
+      --panel: rgba(10, 18, 30, 0.78);
+      --panel-strong: #101b2d;
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #f4f1e8;
+      --muted: rgba(244, 241, 232, 0.74);
+      --faint: rgba(244, 241, 232, 0.52);
+      --accent: #d8a85d;
+      --accent-2: #79b8ff;
+      --good: #7ee2b8;
+      --warn: #f4c77a;
+      --shadow: 0 22px 80px rgba(0, 0, 0, 0.32);
+      --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.2);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max: 1180px;
+      --space-1: 8px;
+      --space-2: 12px;
+      --space-3: 16px;
+      --space-4: 20px;
+      --space-5: 28px;
+      --space-6: 36px;
+      --space-7: 48px;
+      --space-8: 72px;
+      --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: var(--sans);
+      background:
+        radial-gradient(1000px 500px at 20% -10%, rgba(121, 184, 255, 0.16), transparent 60%),
+        radial-gradient(700px 420px at 85% 10%, rgba(216, 168, 93, 0.18), transparent 55%),
+        linear-gradient(180deg, #09111c 0%, #0b1422 50%, #070d16 100%);
+      min-height: 100vh;
+      overflow-x: clip;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
+      opacity: .28;
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      padding: 12px 16px;
+      margin: 16px 0 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-soft);
+      color: var(--faint);
+      font-size: 14px;
+    }
+
+    .banner strong { color: var(--text); font-weight: 600; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: 18px 0 8px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      padding: 6px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      flex: none;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+    }
+
+    .brand p {
+      margin: 3px 0 0;
+      color: var(--faint);
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: transform .18s ease, background-color .18s ease, border-color .18s ease, color .18s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      border-color: var(--line);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .nav-links a.highlight {
+      background: linear-gradient(135deg, #f4d3a2 0%, #d8a85d 55%, #c89548 100%);
+      color: #08111d;
+      border-color: transparent;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(216, 168, 93, 0.2);
+    }
+
+    .nav-links a.highlight:hover,
+    .nav-links a.highlight:focus-visible {
+      background: linear-gradient(135deg, #f6ddb7 0%, #e0b66a 55%, #d19d4c 100%);
+      color: #08111d;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 24px;
+      padding: 24px 0 18px;
+      align-items: stretch;
+    }
+
+    .hero-copy, .hero-card, .section, .mini-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: clamp(22px, 4vw, 44px);
+      position: relative;
+      overflow: clip;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(216, 168, 93, 0.12);
+      border: 1px solid rgba(216, 168, 93, 0.24);
+      color: #f6d49f;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(216, 168, 93, 0.15);
+    }
+
+    h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(44px, 7vw, 86px);
+      line-height: .94;
+      letter-spacing: -0.04em;
+      max-width: 11ch;
+    }
+
+    .hero-copy .lede {
+      margin: 20px 0 0;
+      max-width: 62ch;
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .hero-copy .lede strong { color: var(--text); font-weight: 650; }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+      transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .btn:hover, .btn:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(216, 168, 93, 0.35);
+      background: rgba(255,255,255,0.085);
+      outline: none;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.2);
+    }
+
+    .btn.primary {
+      color: #08111d;
+      background: linear-gradient(135deg, #f4d3a2 0%, #d8a85d 55%, #c89548 100%);
+      border-color: transparent;
+    }
+
+    .btn.primary:hover, .btn.primary:focus-visible {
+      background: linear-gradient(135deg, #f6ddb7 0%, #e0b66a 55%, #d19d4c 100%);
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .pill {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .pill strong { display: block; color: var(--text); font-size: 15px; margin-bottom: 2px; }
+
+    .hero-card {
+      padding: 16px;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+      position: relative;
+      overflow: clip;
+      min-height: 100%;
+    }
+
+    .hero-shot {
+      position: relative;
+      min-height: 440px;
+      border-radius: calc(var(--radius-xl) - 6px);
+      overflow: clip;
+      background:
+        radial-gradient(110% 70% at 25% 15%, rgba(121,184,255,0.26), transparent 55%),
+        radial-gradient(90% 70% at 80% 10%, rgba(216,168,93,0.22), transparent 55%),
+        linear-gradient(180deg, rgba(11,20,34,0.4), rgba(11,20,34,0.85));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-shot::before,
+    .hero-shot::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      pointer-events: none;
+    }
+
+    .hero-shot::before {
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), transparent 20%),
+        linear-gradient(90deg, transparent 0 28%, rgba(255,255,255,0.08) 28% 29%, transparent 29% 71%, rgba(255,255,255,0.08) 71% 72%, transparent 72% 100%),
+        repeating-linear-gradient(90deg, transparent 0 42px, rgba(255,255,255,0.08) 42px 46px, transparent 46px 88px);
+      opacity: .5;
+    }
+
+    .road {
+      position: absolute;
+      left: 50%;
+      bottom: -14px;
+      width: 136%;
+      height: 64%;
+      transform: translateX(-50%) perspective(900px) rotateX(68deg);
+      border-radius: 45px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), transparent 16%),
+        linear-gradient(90deg, #0a0e15 0%, #131a25 48%, #0a0e15 100%);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), 0 30px 80px rgba(0,0,0,0.32);
+    }
+
+    .road::before {
+      content: "";
+      position: absolute;
+      inset: 12% 22% 12%;
+      border-left: 2px dashed rgba(244,241,232,0.25);
+      border-right: 2px dashed rgba(244,241,232,0.18);
+    }
+
+    .car {
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      width: min(380px, 78%);
+      transform: translateX(-50%);
+      filter: drop-shadow(0 18px 32px rgba(0,0,0,0.38));
+    }
+
+    .car svg { display: block; width: 100%; height: auto; }
+
+    .speed {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .proof-line {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 72px;
+      padding: 14px 16px;
+      border-radius: 20px;
+      background: rgba(8,17,29,0.76);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 600;
+      backdrop-filter: blur(14px);
+    }
+
+    .proof-line span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .badge, .stat, .quote, .feature, .compare, .step, .faq-item, .lead-panel, .contact-panel {
+      background: rgba(8,17,29,0.5);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+    }
+
+    .badge {
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 13px;
+      backdrop-filter: blur(12px);
+    }
+
+    .badge strong { color: var(--text); }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 18px;
+      min-height: 118px;
+    }
+
+    .stat .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: #f6d49f;
+      font-size: 13px;
+      margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .stat .kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span { color: var(--muted); font-size: 14px; line-height: 1.45; }
+
+    .grid-3, .grid-4 {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .section {
+      margin: 18px 0 0;
+      padding: clamp(18px, 3vw, 28px);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 62ch;
+      line-height: 1.55;
+    }
+
+    .feature, .compare, .step, .faq-item, .lead-panel, .contact-panel {
+      padding: 20px;
+    }
+
+    .feature h4, .compare h4, .step h4, .faq-item summary, .contact-panel h4, .lead-panel h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .feature p, .compare p, .step p, .faq-item p, .lead-panel p, .contact-panel p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+      font-size: 15px;
+    }
+
+    .feature ul, .compare ul, .lead-list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .feature li, .compare li, .lead-list li {
+      display: flex;
+      gap: 10px;
+      align-items: start;
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .feature li::before, .compare li::before, .lead-list li::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: var(--good);
+      box-shadow: 0 0 0 4px rgba(126,226,184,0.12);
+      flex: none;
+    }
+
+    .feature.highlight {
+      background: linear-gradient(180deg, rgba(216,168,93,0.14), rgba(255,255,255,0.04));
+      border-color: rgba(216,168,93,0.18);
+    }
+
+    .compare {
+      display: grid;
+      gap: 12px;
+    }
+
+    .compare .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    .compare .bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #79b8ff, #d8a85d);
+      width: var(--value, 72%);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .step .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: rgba(216,168,93,0.14);
+      color: #f6d49f;
+      font-weight: 700;
+      margin-bottom: 12px;
+      border: 1px solid rgba(216,168,93,0.18);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+    }
+
+    .facts .mini-card {
+      padding: 18px;
+    }
+
+    .mini-card h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .mini-card p, .mini-card li {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .mini-card ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+
+    details {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    details + details { margin-top: 4px; }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: start;
+      color: var(--text);
+      font-weight: 600;
+      padding: 4px 0;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary span {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .faq-item p { margin-top: 12px; }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .lead-panel {
+      position: relative;
+      overflow: clip;
+    }
+
+    .lead-form {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .input {
+      width: 100%;
+      min-height: 48px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      padding: 0 14px;
+      outline: none;
+    }
+
+    .input::placeholder { color: rgba(244,241,232,0.45); }
+    .input:focus { border-color: rgba(216,168,93,0.35); box-shadow: 0 0 0 4px rgba(216,168,93,0.12); }
+
+    .footer {
+      padding: 28px 0 42px;
+      color: var(--faint);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .footer .foot-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tag i {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      display: inline-block;
+    }
+
+    .fine-print {
+      color: rgba(244,241,232,0.48);
+      font-size: 12px;
+    }
+
+    .source-note {
+      margin-top: 10px;
+      color: rgba(244,241,232,0.48);
+      font-size: 12px;
+    }
+
+    .scroll-marker {
+      position: sticky;
+      bottom: 16px;
+      left: 0;
+      margin: 18px auto 0;
+      width: fit-content;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(8,17,29,0.8);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .accent {
+      color: #f6d49f;
+      font-weight: 600;
+    }
+
+    .road-caption {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(8,17,29,0.75);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      max-width: 230px;
+    }
+
+    @media (max-width: 1020px) {
+      .hero,
+      .facts,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+      .grid-3,
+      .grid-4,
+      .steps,
+      .trust-row,
+      .spec-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .hero-card { order: -1; }
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(var(--max), calc(100% - 24px)); }
+      .banner, .nav, .section-head { flex-direction: column; align-items: start; }
+      .nav-links { justify-content: start; }
+      .hero-copy, .hero-card, .section { border-radius: 24px; }
+      .hero-copy { padding: 20px; }
+      h2 { max-width: 100%; font-size: clamp(38px, 12vw, 56px); }
+      .hero-shot { min-height: 360px; }
+      .trust-row, .grid-3, .grid-4, .steps, .spec-grid { grid-template-columns: 1fr; }
+      .section-head p { max-width: 100%; }
+      .banner { border-radius: 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="banner" role="note" aria-label="Preview notice">
+      <div><strong>Preview only.</strong> This page is a sales mockup for Horizon Wheels Autos and does not change the live site.</div>
+      <div>Built for Frisco · Turo switchers · driver rentals</div>
+    </div>
+
+    <header class="nav">
+      <div class="brand">
+        <img src="assets/logo.webp" alt="Horizon Wheels Autos logo" />
+        <div>
+          <h1>Horizon Wheels Autos</h1>
+          <p>Direct rental cars for Frisco drivers</p>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#why">Why Frisco</a>
+        <a href="#offer">What you get</a>
+        <a href="#compare">Compare</a>
+        <a class="highlight" href="#apply">Apply</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Built for drivers who want to start earning, not wait around</div>
+          <h2>Start driving in Frisco faster.</h2>
+          <p class="lede">
+            If you’re comparing <strong>Turo-style rentals</strong>, delivery cars, or a ride-share setup, Horizon Wheels Autos keeps it simple: unlimited miles, insurance handled, maintenance covered, and roadside help when you need it.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#apply">See the driver path</a>
+            <a class="btn" href="#offer">What’s included</a>
+          </div>
+          <div class="trust-row" aria-label="Key trust points">
+            <div class="pill"><strong>Unlimited miles</strong>No personal-mile math eating into your week.</div>
+            <div class="pill"><strong>Insurance handled</strong>One less thing to sort before pickup.</div>
+            <div class="pill"><strong>Maintenance covered</strong>Keep the car moving and earning.</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-shot" aria-label="Brand motion panel">
+            <div class="speed">
+              <div class="badge"><strong>Frisco demand</strong> tourism + office + sports</div>
+              <div class="badge"><strong>Direct booking</strong> no marketplace friction</div>
+            </div>
+            <div class="proof-line">One car. One local contact. One clean way to start earning.<span>Built for people who want to move fast, not manage a messy rental process.</span></div>
+            <div class="car" aria-hidden="true">
+              <svg viewBox="0 0 760 300" role="img" aria-label="Stylized car silhouette">
+                <defs>
+                  <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#eecf95" />
+                    <stop offset="55%" stop-color="#d8a85d" />
+                    <stop offset="100%" stop-color="#79b8ff" />
+                  </linearGradient>
+                </defs>
+                <path d="M142 182c14-31 37-48 74-58 31-8 67-11 114-11h96c49 0 88 2 121 12 33 10 56 26 73 57l21 5c11 2 19 13 19 24v19c0 13-10 23-23 23h-28c-12 20-35 33-61 33-26 0-48-12-60-31H266c-12 19-34 31-60 31-27 0-50-13-62-33h-18c-13 0-23-10-23-23v-18c0-11 7-20 17-23l22-7zm54-14c-12 13-17 24-20 37h468c-6-22-18-35-34-44-27-15-70-20-130-20H313c-61 0-100 6-117 27z" fill="url(#g)" opacity="0.95"/>
+                <path d="M190 171c7-18 19-33 37-45 19-11 47-18 86-18h70c46 0 84 2 112 7 29 5 49 16 61 34H190z" fill="#f7f2e6" opacity="0.18"/>
+                <circle cx="250" cy="242" r="30" fill="#0a0f16"/>
+                <circle cx="250" cy="242" r="18" fill="#cfd6df"/>
+                <circle cx="551" cy="242" r="30" fill="#0a0f16"/>
+                <circle cx="551" cy="242" r="18" fill="#cfd6df"/>
+                <rect x="260" y="109" width="270" height="73" rx="28" fill="#eff3f7" opacity="0.12"/>
+                <path d="M286 110h138c17 0 30 13 30 30v17H256v-14c0-18 14-33 30-33z" fill="#eff3f7" opacity="0.14"/>
+              </svg>
+            </div>
+            <div class="road"></div>
+            <div class="road-caption">
+              A clean local rental feel — not a cluttered marketplace listing.
+            </div>
+          </div>
+          <div class="spec-grid">
+            <div class="stat">
+              <div class="kicker">Frisco tourism</div>
+              <strong>$96.6M</strong>
+              <span>Estimated economic impact in FY2024, with 7.5M visitors and record event demand.</span>
+            </div>
+            <div class="stat">
+              <div class="kicker">Visitor traffic</div>
+              <strong>259 events</strong>
+              <span>Booked through Visit Frisco, plus PGA Frisco, The Star, Toyota Stadium, and more.</span>
+            </div>
+            <div class="stat">
+              <div class="kicker">Corporate pull</div>
+              <strong>1,000 jobs</strong>
+              <span>Toyota Financial Services is moving into Frisco — more business travel, more road demand.</span>
+            </div>
+            <div class="stat">
+              <div class="kicker">Future lift</div>
+              <strong>Universal Kids</strong>
+              <span>The next wave of family and tourism traffic is already under construction.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="why">
+        <div class="section-head">
+          <div>
+            <h3>Why Frisco is a smart car-rental market</h3>
+          </div>
+          <p>
+            Frisco isn’t just a suburb. It’s a visitor economy, sports destination, corporate corridor, and growth market all at once. That means people need cars for quick trips, work, events, airport runs, and driver gigs.
+          </p>
+        </div>
+        <div class="grid-3">
+          <article class="feature highlight">
+            <h4>Sports + events create constant trips</h4>
+            <p>People come in waves for PGA Frisco, The Star, Toyota Stadium, and the city’s big event calendar. That is live demand for short-term wheels.</p>
+            <ul>
+              <li>Weekend visitors</li>
+              <li>Event traffic</li>
+              <li>Last-minute airport pickups</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <h4>Corporate growth keeps the roads busy</h4>
+            <p>Frisco keeps pulling in major employers and relocating teams. That creates weekday rental demand from people who need to move before they settle in.</p>
+            <ul>
+              <li>Temporary work travel</li>
+              <li>Relocation gaps</li>
+              <li>Local business meetings</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <h4>More development means more customers</h4>
+            <p>Universal Kids Resort, the Rail District, and ongoing corridor growth will bring more people who need a simple car solution.</p>
+            <ul>
+              <li>Family visitors</li>
+              <li>Tourist stays</li>
+              <li>North Dallas spillover</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="offer">
+        <div class="section-head">
+          <h3>What the driver gets</h3>
+          <p>Keep the offer plain. No jargon. No hidden surprises. No confusion about the cost of using the car.</p>
+        </div>
+        <div class="grid-4">
+          <article class="feature"><h4>Unlimited miles</h4><p>Drive as much as you need without personal-mile penalties.</p></article>
+          <article class="feature"><h4>Insurance included</h4><p>Covered before you hit the road, so you can focus on the work.</p></article>
+          <article class="feature"><h4>Maintenance handled</h4><p>Regular upkeep keeps the vehicle ready for the next shift.</p></article>
+          <article class="feature"><h4>Roadside help</h4><p>Support is there if something goes wrong on the road.</p></article>
+          <article class="feature"><h4>Rideshare and delivery friendly</h4><p>Built for drivers who want one car to do real work across multiple apps.</p></article>
+          <article class="feature"><h4>Quick approval flow</h4><p>Simple qualification and pickup path — no long back-and-forth.</p></article>
+          <article class="feature"><h4>Clean local pickup</h4><p>Keep the experience professional and easy to understand from the first touch.</p></article>
+          <article class="feature"><h4>Weekly or monthly terms</h4><p>Flexible enough for test runs, new drivers, and seasonal demand.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="compare">
+        <div class="section-head">
+          <h3>If you’ve been comparing Turo</h3>
+          <p>This page should help a buyer see the difference fast: marketplace rental vs direct local rental.</p>
+        </div>
+        <div class="facts">
+          <div class="mini-card">
+            <h4>The direct-booking angle</h4>
+            <ul>
+              <li>One place to ask questions.</li>
+              <li>One set of terms.</li>
+              <li>One clean pickup path.</li>
+              <li>No guest-host back-and-forth.</li>
+              <li>No mystery personal-mile bill at the end.</li>
+            </ul>
+          </div>
+          <div class="mini-card">
+            <h4>What the comparison should say</h4>
+            <p>
+              If a driver wants to get in a car and make money, the pitch is not “we’re complicated but cheaper.” The pitch is: <span class="accent">we’re simpler, clearer, and built for work.</span>
+            </p>
+            <div class="tag-row" aria-label="Comparison chips">
+              <span class="tag"><i></i>Direct booking</span>
+              <span class="tag"><i></i>Unlimited miles</span>
+              <span class="tag"><i></i>Insurance handled</span>
+              <span class="tag"><i></i>Maintenance included</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h3>How it works</h3>
+          <p>Simple enough to understand in 10 seconds. Strong enough to move a buyer to action.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="num">1</div>
+            <h4>Tell us what you need</h4>
+            <p>Driver, delivery, or Turo-switcher. Short form. Real answer. No wasted back-and-forth.</p>
+          </article>
+          <article class="step">
+            <div class="num">2</div>
+            <h4>We check the fit</h4>
+            <p>Approve the right driver path and match the right car to the job.</p>
+          </article>
+          <article class="step">
+            <div class="num">3</div>
+            <h4>Pickup and go</h4>
+            <p>Get in, start driving, and keep the miles moving instead of negotiating rules.</p>
+          </article>
+          <article class="step">
+            <div class="num">4</div>
+            <h4>Keep earning</h4>
+            <p>Maintenance and support stay in the background while the car stays on the road.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="apply">
+        <div class="section-head">
+          <h3>Driver application preview</h3>
+          <p>This is the exact kind of form the live site should lead with: short, direct, and focused on qualification.</p>
+        </div>
+        <div class="contact">
+          <div class="lead-panel">
+            <h4>Get started</h4>
+            <p>Use this card to show the buyer what happens next. It should feel like progress, not bureaucracy.</p>
+            <form class="lead-form" onsubmit="event.preventDefault(); alert('Preview only — wire this form to the live lead flow when ready.');">
+              <input class="input" type="text" placeholder="Full name" aria-label="Full name" />
+              <input class="input" type="tel" placeholder="Phone number" aria-label="Phone number" />
+              <input class="input" type="email" placeholder="Email address" aria-label="Email address" />
+              <input class="input" type="text" placeholder="What do you need the car for?" aria-label="What do you need the car for?" />
+              <button class="btn primary" type="submit">Submit request</button>
+            </form>
+          </div>
+          <div class="contact-panel">
+            <h4>Good qualifying questions</h4>
+            <p>These are the questions the live flow should ask to avoid bad leads:</p>
+            <ul class="lead-list">
+              <li>Are you driving for Uber, Lyft, delivery, or renting for another use?</li>
+              <li>Do you need weekly or monthly terms?</li>
+              <li>Are you looking for direct local booking instead of marketplace rentals?</li>
+              <li>Do you already have the documents needed to move fast?</li>
+            </ul>
+            <p class="source-note">Sources used in this preview: Visit Frisco, Community Impact, Frisco EDC, and D CEO reporting on Frisco tourism, sports, and corporate growth.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-head">
+          <h3>FAQ</h3>
+          <p>Short answers. No waffle.</p>
+        </div>
+        <div class="grid-3">
+          <article class="faq-item">
+            <h4>Is this for Turo drivers too?</h4>
+            <p>Yes. The copy should speak to Turo switchers without turning the site into a marketplace clone.</p>
+          </article>
+          <article class="faq-item">
+            <h4>Does the page promise too much?</h4>
+            <p>No. It stays on the business truths already present: unlimited miles, insurance, maintenance, roadside help, and a direct-booking flow.</p>
+          </article>
+          <article class="faq-item">
+            <h4>What should the live version do next?</h4>
+            <p>Turn the form into a real lead path, add the actual phone number, and wire a clean follow-up flow for qualified drivers.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="scroll-marker">Frisco is the market. Direct booking is the offer. Simplicity is the edge.</div>
+      <div class="foot-row">
+        <div>Horizon Wheels Autos preview · noindex · nofollow</div>
+        <div>Made for client review before anything touches the live site</div>
+      </div>
+      <p class="fine-print">Research points referenced in the page: Frisco tourism reached $96.6M in estimated economic impact with 7.5M visitors in 2023 and 259 booked events in FY2024; Toyota Financial Services is moving 1,000 jobs to Frisco; Universal Kids Resort is under construction.</p>
+    </footer>
+  </div>
+</body>
+</html>
